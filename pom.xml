@@ -42,7 +42,7 @@
 
 	<build>
 	    <!-- 项目打包（packaging）后的文件名，去掉了后缀 -->
-		<finalName>${artifactId}</finalName>
+		<finalName>${project.artifactId}</finalName>
 		<!--默认源代码目录 -->
 		<sourceDirectory>src</sourceDirectory>
 		<outputDirectory>${project.build.directory}/classes</outputDirectory> <!-- ${project.build.directory}就是我们通常看到的target目录 -->
@@ -96,7 +96,7 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-            <!-- 把依赖的jar包复制到target/${artifactId}/WEB-INF/lib目录下，在Web项目中这个是必须配置的 -->
+            <!-- 把依赖的jar包复制到target/${project.artifactId}/WEB-INF/lib目录下，在Web项目中这个是必须配置的 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -109,7 +109,7 @@
 						</goals>
 						<configuration>
 							<!-- ${project.build.directory}就是我们通常看到的target目录 -->
-							<outputDirectory>${project.build.directory}/${artifactId}/WEB-INF/lib</outputDirectory>
+							<outputDirectory>${project.build.directory}/${project.artifactId}/WEB-INF/lib</outputDirectory>
 							<excludeTransitive>false</excludeTransitive>
 							<stripVersion>true</stripVersion>
 						</configuration>
@@ -135,7 +135,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<webappDirectory>${project.build.directory}/${artifactId}</webappDirectory>
+					<webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
 					<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
 					<webResources>
 						<resource>
@@ -182,7 +182,7 @@
 							<!-- 项目的WebApp路径 -->
 							<warSourceDirectory>${basedir}\WebContent</warSourceDirectory>
 							<!-- 项目的Context Root -->
-							<!-- <path>/${artifactId}</path>  -->
+							<!-- <path>/${project.artifactId}</path>  -->
 							<!-- 项目打包后的war包路径 -->
 							<!-- <warFile>${project.build.directory}/${project.build.finalName}.war</warFile> -->
 						</configuration>
