@@ -20,6 +20,8 @@
 		<javax.servlet.jsp.version>2.2</javax.servlet.jsp.version>		
 		<!-- lombok插件版本号 -->
 		<lombok.version>1.18.2</lombok.version>
+		<!-- ProtoStuff插件 -->
+		<protostuff.version>1.4.0</protostuff.version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +57,18 @@
 		    <artifactId>lombok</artifactId>
 		    <version>${lombok.version}</version>
 		</dependency>
+		<!-- ProtoStuff序列号和反序列化插件，不使用该插件，也可以去掉该依赖包 -->
+		<dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>${protostuff.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>${protostuff.version}</version>
+        </dependency>
+		<!-- end -->
 	</dependencies>
 
 	<build>
