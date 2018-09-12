@@ -49,6 +49,7 @@
 			<artifactId>log4j</artifactId>
 			<version>${org.apache.log4j.version}</version>
 		</dependency>
+		<!-- end -->
 		<!-- lombok插件，编译时自动注入代码到字节码，使用方式注解方式：@Data、@NoArgsConstructor等等 -->
 		<!-- 用途：编译时，自动生成Bean的Getter、Setter方法，生成构造函数等等，提高开发效率，减少代码量 -->
 		<!-- 不使用该插件，也可以去掉这个依赖包 -->
@@ -57,6 +58,7 @@
 		    <artifactId>lombok</artifactId>
 		    <version>${lombok.version}</version>
 		</dependency>
+		<!-- end -->
 		<!-- ProtoStuff序列号和反序列化插件，不使用该插件，也可以去掉该依赖包 -->
 		<dependency>
             <groupId>io.protostuff</groupId>
