@@ -22,6 +22,8 @@
 		<lombok.version>1.18.2</lombok.version>
 		<!-- ProtoStuff插件 -->
 		<protostuff.version>1.4.0</protostuff.version>
+		<!-- Tomcat的jar包版本号 -->
+		<tomcat.embed.version>8.5.31</tomcat.embed.version>	
 	</properties>
 
 	<dependencies>
@@ -71,6 +73,13 @@
             <version>${protostuff.version}</version>
         </dependency>
 		<!-- end -->
+		<!-- 加入Tomcat的依赖包，可以去掉，此处加上，只是为了项目能够调试Tomcat的代码 -->
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		    <version>${tomcat.embed.version}</version>
+			<scope>provided</scope> <!-- scope=provided 在编译和测试的过程有效，最后项目打包时不会加入 -->
+		</dependency>			
 	</dependencies>
 
 	<build>
