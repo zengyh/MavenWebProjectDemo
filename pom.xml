@@ -79,7 +79,8 @@
 		    <artifactId>tomcat-embed-jasper</artifactId>
 		    <version>${tomcat.embed.version}</version>
 			<scope>provided</scope> <!-- scope=provided 在编译和测试的过程有效，最后项目打包时不会加入 -->
-		</dependency>			
+		</dependency>
+		<!-- end -->			
 	</dependencies>
 
 	<build>
