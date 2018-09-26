@@ -155,6 +155,8 @@
 							<outputDirectory>${project.build.directory}/${project.artifactId}/WEB-INF/lib</outputDirectory>
 							<excludeTransitive>false</excludeTransitive>
 							<stripVersion>true</stripVersion>
+							<!-- 不复制scope=provided的依赖包 -->
+                            <excludeScope>provided</excludeScope>
 						</configuration>
 					</execution>
 				</executions>
